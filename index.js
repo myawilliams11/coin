@@ -1,10 +1,16 @@
-var coin = {
-    state: 0,
-    flip: function() {
-        // randomly set this.state to be either 0 or 1
+var coin = { "0", "1" 
+    state: 0, 1
+    flip: function getFlip(i= 0; i >= 1; i ++) {
+            return Math.random();
+          }
     },
     toString: function() {
-        // return “H” or “T” depending on whether this.state is 0 or 1
+        if (coin === 0){
+            document.getElementById("heads.png")
+        }
+        else {
+            document.getElementById("tails.png")
+        }
     },
     toHTML: function() {
         var img = document.createElement("img");
