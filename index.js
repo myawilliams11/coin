@@ -1,22 +1,30 @@
 var coin = { 
     state: 0,
     flip: function (){
-        Math.round(math.random()*2);
-       console.log(this.state); 
+        this.state = Math.round(Math.random());
+        console.log(this.state); 
 
 //in the above function, you'll want to generate either a *rounded* 0 or a 1 *randomly*.
     },
     toString: function () {
-        if (coin === 0){
-
-            document.getElementById("heads.png").src;
+        if (this.state === 0){
+            return "H"
         }
         else {
-            document.getElementById("tails.png").src;
+            return "T"
         }
     },
+
     toHTML: function() {
         var img = document.createElement("img");
+
+        if (this.state === 0){
+            img.src = "heads.png"
+        }
+        else {
+            img.src = "tails.png"
+        }
+
         // set the properties of the image element to show either heads or tails
         return img;
     }
@@ -25,5 +33,12 @@ var coin = {
 //     // add for loop to flip 20x
 };
 
-for (i = 0; i < 20 ; i++) {}
+for (let i = 0; i < 20 ; i++) {
+    coin.flip()
+    document.getElementById("result1").appendChild(coin.toHTML())
+
+    let textNode= document.createTextNode(coin.toString())
+    document.getElementById("result2").appendChild(textNode)
+
+}
 // add for loop to flip 20x
